@@ -2,103 +2,113 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProductCard Component</title>
-<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<title>Product Cards</title>
+
 <style>
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(to right,#dfe9f3,#ffffff);
-padding:40px;
+body {
+  margin: 0;
+  font-family: Poppins, Arial, sans-serif;
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
 }
-.container{
-display:flex;
-gap:30px;
-justify-content:center;
-flex-wrap:wrap;
+
+.container {
+  padding: 40px 20px;
+  text-align: center;
 }
-.card{
-background:#f3f4f6;
-width:280px;
-border-radius:16px;
-padding:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:transform 0.3s ease;
+
+.title {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 30px;
 }
-.card:hover{
-transform:translateY(-5px);
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
 }
-.image-placeholder{
-height:180px;
-background:#d1d5db;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:20px;
+
+.card {
+  background: white;
+  width: 230px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
 }
-.image-placeholder div{
-width:90px;
-height:90px;
-background:#bfc5cc;
-border-radius:15px;
+
+.card:hover {
+  transform: translateY(-10px);
 }
-.title{
-font-size:22px;
-font-weight:bold;
-margin-bottom:10px;
+
+.card h3 {
+  margin: 0;
 }
-.price{
-font-size:20px;
-margin-bottom:15px;
+
+.price {
+  font-weight: bold;
+  margin: 10px 0;
 }
-.status{
-padding:8px 16px;
-border-radius:20px;
-display:inline-block;
-font-weight:600;
+
+.in-stock {
+  color: #00b894;
+  font-weight: bold;
 }
-.instock{
-background:#d1fae5;
-color:#065f46;
-}
-.outstock{
-background:#fee2e2;
-color:#991b1b;
+
+.out-stock {
+  color: #d63031;
+  font-weight: bold;
 }
 </style>
+
 </head>
+
 <body>
-<div id="root"></div>
-<script type="text/babel">
-function ProductCard(props){
-return(
-<div className="card">
-<div className="image-placeholder">
-<div></div>
+
+<div class="container">
+  <h1 class="title">🛒 Modern Product Cards</h1>
+
+  <div class="card-wrapper">
+
+    <div class="card">
+      <h3>Wireless Mouse</h3>
+      <p class="price">₹799</p>
+      <p class="in-stock">In Stock</p>
+    </div>
+
+    <div class="card">
+      <h3>Mechanical Keyboard</h3>
+      <p class="price">₹2499</p>
+      <p class="out-stock">Out of Stock</p>
+    </div>
+
+    <div class="card">
+      <h3>Bluetooth Speaker</h3>
+      <p class="price">₹1499</p>
+      <p class="in-stock">In Stock</p>
+    </div>
+
+    <div class="card">
+      <h3>Smart Watch</h3>
+      <p class="price">₹3999</p>
+      <p class="in-stock">In Stock</p>
+    </div>
+
+    <div class="card">
+      <h3>USB-C Charger</h3>
+      <p class="price">₹599</p>
+      <p class="out-stock">Out of Stock</p>
+    </div>
+
+    <div class="card">
+      <h3>Laptop Stand</h3>
+      <p class="price">₹999</p>
+      <p class="in-stock">In Stock</p>
+    </div>
+
+  </div>
 </div>
-<div className="title">{props.name}</div>
-<div className="price">${props.price}</div>
-<div className={`status ${props.inStock ? 'instock' : 'outstock'}`}>
-{props.inStock ? 'In Stock' : 'Out of Stock'}
-</div>
-</div>
-);
-}
-function App(){
-return(
-<div className="container">
-<ProductCard name="Wireless Headphones" price="129.99" inStock={true}/>
-<ProductCard name="Mechanical Keyboard" price="89.99" inStock={false}/>
-<ProductCard name="Smart Watch" price="199.99" inStock={true}/>
-</div>
-);
-}
-const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App/>);
-</script>
+
 </body>
 </html>
