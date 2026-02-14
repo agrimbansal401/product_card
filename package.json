@@ -1,20 +1,15 @@
 {
-  "name": "product-card",
+  "name": "product_card",
   "version": "1.0.0",
-  "homepage": "https://agrimbansal401.github.io/product_card",
+  "homepage": ".",
   "private": true,
-
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "gh-pages": "^6.1.1"
+    "react-scripts": "5.0.1"
   },
-
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "react-scripts build"
   }
 }
